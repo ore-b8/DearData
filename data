@@ -1,0 +1,20 @@
+String [] rawData;
+
+void setup() {
+  rawData = loadStrings ("rawData.txt");
+
+  for (int i=0; i<rawData.length; i++) {
+
+    String []dataItems = split(rawData[i], "|"); 
+  }
+}
+
+void draw () {
+    
+  float bagSize = 60;
+  ellipse(200,150, bagSize, bagSize );
+  float bagX = 200;
+  float bagY = 150;
+  
+  ellipse (bagX,bagY,bagSize,bagSize);
+}
