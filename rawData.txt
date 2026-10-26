@@ -1,0 +1,33 @@
+Street 1 | Tote bag | Blue | Medium |
+Street 2 | Shoulder bag | Brown | Medium |
+Campus 3 | Shoulder bag |Black | Medium |
+Campus 4 | Backpack | Blue | Small |
+Street 5 |Backpack | Beige | Large |
+Street 6 | Crossbody bag | Black | Small |
+Street 7 | Backpack | Green | Small |
+Street 8 | Backpack | Orange | Medium |
+Street 9 | Crossbody bag | Green | Medium |
+Street 10 | Other | N/A | N/A |
+Street 11 | Backpack | Blue | Medium |
+Street 12 | Tote bag | Green | Medium |
+Street 13 | Shoulder bag | Black | Large |
+Street 14 | Backpack | White | Small |
+Street 15 | Backpack | Black | Medium |
+Street 16 | Tote bag | Grey | Medium |
+Street 17 | Backpack | Green | Small |
+Street 18 | Tote bag | Blue | Large |
+Street 19 | Crossbody bag | Multicoloured (“Rainbows” in notes)| Small |
+Street 20 | Backpack | Purple | Medium |
+Street 21 | Backpack | Black | Medium |
+Public transport 22 | Backpack | Black | Medium |
+Public transport 23 | Shoulder bag | Brown | Medium |
+Public transport 24 | Shoulder bag | Yellow | Small |
+Public transport 25 | Other | N/A | N/A | 
+Public transport 26 | Tote bag | Beige | Medium | 
+Public transport 27 | Shoulder bag | Blue | Medium |
+Public transport 28 | Backpack | Black | Small | 
+Campus 29 | Crossbody bag | Green | Small | 
+Street 30 | Crossbody bag | Pink | Small | 
+Street 31 | Backpack | Black | Medium |
+Campus 32 | Belt Bag | Green | Small | 
+Street 33 | Backpack | Pink  | Medium | 
