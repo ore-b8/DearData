@@ -41,6 +41,7 @@ background(220);
      !place.startsWith(selectedPlace)){
        continue;
      }
+     
     String bagColour = trim(data[i][2]);
     String bagType =  trim(data[i][1]);
     String bagSizeCategory = trim(data[i][3]);
