@@ -2,11 +2,15 @@ String [] rawData;
 String [][]data;
 String selectedPlace = "All";
 float bagSize=20;
+float x;
+float y;
+float [] bagX;
+float []bagY;
 
 void setup() {
-  size(1000, 1000);
+  size(1000,1000);
 
-  background(220);
+  background(0);
 
   rawData = loadStrings ("myData.csv");
 
@@ -22,35 +26,49 @@ void setup() {
       data[i][d] = dataItems[d];
     }
   }
+
+  bagX = new float[data.length];
+  bagY = new float[data.length];
+
+ for (int i = 0; i < data.length; i++) {
+
+  if (i < 22) {
+    bagX[i] = width/3;
+    bagY[i] = 50 + i * 42;
+  } else {
+    bagX[i] = width*2/3;
+    bagY[i] = 50 + (i - 22) * 42;
+  }
 }
+}
+  
+  
 void draw () {
-background(220);
+  background(0);
 
   for (int i=0; i<rawData.length; i++) {
     if (data[i].length<4) {
       continue;
     }
 
-    float x;
-    
-    float rowSpacing = (float) height / data.length;
-    float y = rowSpacing * (i + 0.5);
+    x = bagX[i];
+    y = bagY[i];
 
-     String place = trim(data[i][0]);
-     if(!selectedPlace.equals("All") &&
-     !place.startsWith(selectedPlace)){
-       continue;
-     }
-     
+    String place = trim(data[i][0]);
+    if (!selectedPlace.equals("All") &&
+      !place.startsWith(selectedPlace)) {
+      continue;
+    }
+
     String bagColour = trim(data[i][2]);
     String bagType =  trim(data[i][1]);
     String bagSizeCategory = trim(data[i][3]);
-    
-    if(bagSizeCategory.equals("Small")){
+
+    if (bagSizeCategory.equals("Small")) {
       bagSize = 15;
-    } else if (bagSizeCategory.equals("Medium")){
+    } else if (bagSizeCategory.equals("Medium")) {
       bagSize=25;
-    } else if (bagSizeCategory.equals("Large")){
+    } else if (bagSizeCategory.equals("Large")) {
       bagSize = 35;
     }
 
@@ -75,15 +93,18 @@ background(220);
     } else if (bagColour.equals("Pink")) {
       fillColour = color(229, 97, 146);
     } else if (bagColour.equals("N/A")) {
-    } if (bagColour.equals("N/A")){
-     noFill();
-    } else {
-      fill(fillColour);
+     fillColour = color (113,86,45);
     }
-  
 
-    stroke(50);
-   
+
+    stroke(225);
+strokeWeight(2);
+
+if (bagType.equals("Other")){
+  stroke(113,86,45);
+  line (x-bagSize/2, y, x+bagSize,y);
+} else {
+      fill(fillColour);
 
     if (bagType.equals("Tote bag")) {
       ellipse(x, y, bagSize, bagSize);
@@ -104,24 +125,36 @@ background(220);
         );
     }
   }
+  }
 }
 
-void keyPressed(){
-  
-  if (key == 's'){
+void keyPressed() {
+// click c to show street; p to show campus; r to show public transport; c to show cafe; and 0 to show all again
+  if (key == 's') {
     selectedPlace = "Street";
-  }
-  else if (key == 'c'){
+  } else if (key == 'c') {
     selectedPlace = "Campus";
-  } 
-  else if (key == 'p'){
+  } else if (key == 'p') {
     selectedPlace = "Public transport";
-  }
-  else if (key == 'r'){
+  } else if (key == 'r') {
     selectedPlace = "Cafe";
-  } 
-  else if (key == '0'){
-    selectedPlace = "All"; 
+  } else if (key == '0') {
+    selectedPlace = "All";
   }
 }
-  
+
+void mouseClicked () {
+  for (int i = 0; i < data.length; i++) {
+
+    float distance = dist(mouseX, mouseY, bagX[i], bagY[i]);
+
+    if (distance < bagSize/2) {
+
+      bagX[i] = random(100, 900);
+      bagY[i] = random(100, 900);
+    }
+    if (distance < bagSize/2) {
+      background(220, 225, 0);
+    }
+  }
+}
